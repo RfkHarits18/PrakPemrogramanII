@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.YourTableMapper">
+
+    <select id="getAll" resultType="models.YourTable">
+        SELECT * FROM your_table;
+    </select>
+
+    <insert id="insert">
+        INSERT INTO your_table (column1, column2, column3, column4, column5)
+        VALUES (#{column1}, #{column2}, #{column3}, #{column4}, #{column5});
+    </insert>
+
+    <update id="update">
+        UPDATE your_table
+        SET column1 = #{column1},
+            column2 = #{column2},
+            column3 = #{column3},
+            column4 = #{column4},
+            column5 = #{column5}
+        WHERE id = #{id};
+    </update>
+
+    <delete id="delete">
+        DELETE FROM your_table WHERE id = #{id};
+    </delete>
+
+    <select id="getById" resultType="models.YourTable">
+        SELECT * FROM your_table WHERE id = #{id};
+    </select>
+
+</mapper>
